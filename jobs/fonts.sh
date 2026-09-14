@@ -41,6 +41,14 @@ for FONT in "${NERD_FONTS[@]}"; do
   fi
 done
 
+if [ ! -d "/tmp/aporetic" ]; then
+    git clone https://github.com/protesilaos/aporetic /tmp/aporetic
+    cp -r /tmp/aporetic/aporetic-s* "$FONTS_DIR"
+
+    git clone https://github.com/Echinoidea/Aporetic-Nerd-Font /tmp/aporetic-nerd
+    cp /tmp/aporetic-nerd/*.ttf "$FONTS_DIR"
+fi
+
 fc-cache $FONTS_DIR
 
 cd $SCRIPT_DIR
