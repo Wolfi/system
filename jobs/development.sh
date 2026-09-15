@@ -77,3 +77,21 @@ if ! command -v nvim &>/dev/null; then
   # Install neovim plugins
   nvim --headless "+Lazy! sync" +qa
 fi
+
+echo -e "\e[32m[Development]\e[0m Installing odin..."
+if [ ! -d "$HOME/personal/Odin" ]; then
+    git clone https://github.com/odin-lang/Odin $HOME/personal/Odin
+    cd $HOME/personal/Odin
+    make release-native 
+    ln -s  $HOME/personal/Odin/odin $HOME/.local/bin/odin
+fi
+
+echo -e "\e[32m[Development]\e[0m Installing ols..."
+if [ ! -d "$HOME/personal/ols" ]; then
+    git clone https://github.com/DanielGavin/ols $HOME/personal/ols
+    cd $HOME/personal/ols
+    bash build.sh
+    bash odinfmt.sh
+    ln -s  $HOME/personal/Odin/ols $HOME/.local/bin/ols
+    ln -s  $HOME/personal/Odin/odinfmt $HOME/.local/bin/odinfmt
+fi
