@@ -12,34 +12,10 @@ BUILD_DEPS=(
   libgnutls-devel
   tree-sitter-devel
 
-  # Grammars
-  # tree-sitter-bash
-  # tree-sitter-c
-  # tree-sitter-c-sharp
-  # tree-sitter-commonlisp
-  # tree-sitter-cpp
-  # tree-sitter-css
-  # tree-sitter-csv
-  # tree-sitter-glsl
-  # tree-sitter-go
-  # tree-sitter-hare
-  # tree-sitter-hlsl
-  # tree-sitter-html
-  # tree-sitter-javascript
-  # tree-sitter-json
-  # tree-sitter-lua
-  # tree-sitter-markdown
-  # tree-sitter-meson
-  # tree-sitter-odin
-  # tree-sitter-python
-  # tree-sitter-rust
-  # tree-sitter-scheme
-  # tree-sitter-toml
-  # tree-sitter-vim
-  # tree-sitter-wgsl
-  # tree-sitter-xml
-  # tree-sitter-yaml
-  # tree-sitter-zig
+  # Not build deps, but tools related to emacs
+  aspell
+  aspell-en
+  aspell-de
 )
 
 install_zypper "${BUILD_DEPS[@]}"
